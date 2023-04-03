@@ -1,6 +1,6 @@
 import React from 'react';
 import { } from 'recharts';
-import { Panel,Title } from '@ui5/webcomponents-react';
+import {  Panel,Title } from '@ui5/webcomponents-react';
 
 export const renderCustomizeLengend = props => {
     const mapping = { 
@@ -12,7 +12,8 @@ export const renderCustomizeLengend = props => {
     const pannels = {
       total: [],
       regular: [],
-      promotion: []
+      promotion: [],
+    
     }
     payload.forEach(element => {
       console.log(element);
@@ -22,13 +23,12 @@ export const renderCustomizeLengend = props => {
       pannels[pannelName].push(element);
     });
     return (
-        <div>
-        <Title level="H5"><b>Legends</b></Title>
-        <Panel style={{width:'20rem' }} headerText="Total"  onToggle={function ka(){}}>
+    <div>
+      <Title level="H5"><b>Legends</b></Title>
+      <Panel style={{width:'20rem' }} headerText="Total"  onToggle={function ka(){}}>
       <div style={{ paddingRight: '100px', paddingTop: '0px' }}>
         {pannels.total.map((entry, index) => (
           <div
-          
           key={`item-${index}`}
             style={{
               width: '100%',
@@ -36,15 +36,11 @@ export const renderCustomizeLengend = props => {
               alignItems: 'flex-start',
             }}
           >
-            <div
-              style={{
-                flex: 'none',
-                background: entry.color,
-                height: '12px',
-                width: '12px',
-                margin: '2px 5px 0 0',
-              }}
-            ></div>
+          <div>
+            <svg viewBox='0 0 32 32' width='14' height='14' >
+                <path stroke-width={4} fill="none" stroke="#8884d8" d='M 0 16 h 10.6667 A 5.33333 5.33333 0 1 1 21.3333 16 H 32 M 21.3333 16 A 5.33333 5.33333 0 1 1 10.6667 16'></path>
+              </svg>
+            </div>
             <div
             style={{
               paddingRight: '3px',
@@ -52,7 +48,7 @@ export const renderCustomizeLengend = props => {
               overflowWrap: 'break-word',
               wordBreak:'break-word',
             }}
-          >
+            >
             
               {entry.value}
             </div>
@@ -72,14 +68,12 @@ export const renderCustomizeLengend = props => {
             }}
           >
             <div
-              style={{
-                flex: 'none',
-                background:entry.color,
-                height: '12px',
-                width: '12px',
-                margin: '2px 5px 0 0',
-              }}
-            ></div>
+              
+            >
+              <svg viewBox='0 0 32 32' width='14' height='14' >
+                <path stroke="none" fill='#413ea0' d='M 0 4 h 32 v 24 h -32 Z'></path>
+              </svg>
+            </div>
             <div
             style={{
               paddingRight: '3px',
@@ -107,15 +101,11 @@ export const renderCustomizeLengend = props => {
             }}
           >
          
-            <div
-              style={{
-                flex: 'none',
-                background: entry.color,
-                height: '12px',
-                width: '12px',
-                margin: '2px 5px 0 0',
-              }}
-            ></div>
+            <div>
+              <svg viewBox='0 0 32 32' width='14' height='14' >
+                <path stroke-width='4'fill='none' stroke="#ff7300" d='M 0 16 h 10.6667 A 5.33333 5.33333 0 1 1 21.3333 16 H 32 M 21.3333 16 A 5.33333 5.33333 0 1 1 10.6667 16'></path>
+              </svg>
+            </div>
             <div
             style={{
               paddingRight: '3px',
@@ -124,8 +114,7 @@ export const renderCustomizeLengend = props => {
               wordBreak:'break-word',
             }}
           >
-            
-              {entry.value}
+            {entry.value}
             </div>
           </div>
         ))}

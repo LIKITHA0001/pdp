@@ -1,6 +1,7 @@
 import React,  { useState, useCallback } from "react";
 import { renderCustomizeLengend } from "./New_Legend";
-import {handleClick} from "./Highlight";
+import {handleMouseEnter,handleMouseLeave} from "./Highlight";
+import {handleLegendMouseOver} from "./legendPopup";
 import {
   ComposedChart,
   Line,

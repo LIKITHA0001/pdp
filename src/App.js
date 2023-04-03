@@ -17,7 +17,7 @@ function App() {
         
           <div  data-layout-indent="XL1 L1 M1 S0"
       data-layout-span="XL8 L8 M8 S12"><Chart/></div>
-      {/* <div><MyComponentWithPopover/></div> */}
+     <div><MyComponentWithPopover/></div> 
         </Grid>
       </FlexBox>
     </>

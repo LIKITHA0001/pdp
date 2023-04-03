@@ -1,5 +1,5 @@
 import React,{ useState,setResponsivePopoverIsOpen } from "react";
-import {ResponsivePopover,Button,Label,Grid, Bar,Title,Icon} from '@ui5/webcomponents-react';
+import {ResponsivePopover,Button,Label,Grid, Bar,Title,Icon, List, StandardListItem} from '@ui5/webcomponents-react';
 const MyComponentWithPopover = () => {
     const [popoverIsOpen, setPopoverIsOpen] = useState(false);
     return (
@@ -20,6 +20,21 @@ const MyComponentWithPopover = () => {
             setResponsivePopoverIsOpen(false);
           }}
         >
+          <List
+          style={{
+            width:'200px'
+          }}
+          >
+            <StandardListItem additionalText="3">
+              Total
+            </StandardListItem>
+            <StandardListItem additionalText="2">
+              Average
+            </StandardListItem>
+            <StandardListItem additionalText="1">
+              Individual
+            </StandardListItem>
+          </List>
             </ResponsivePopover>
       </>
     );
